@@ -252,7 +252,7 @@ input,
 select,
 textarea {
   color: #10152c;
-  font-family: Lora, Georgia, serif;
+  font-family: futura-pt, Karla, Arial, sans-serif;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.5; }
@@ -269,7 +269,7 @@ h5,
 h6 {
   clear: both;
   color: #a58e3c;
-  font-family: "Poiret One";
+  font-family: mostra-nuova, "Poiret One";
   font-weight: 400;
   line-height: 1.2; }
   h1 a:hover,
@@ -295,15 +295,14 @@ h6 {
 h1 {
   font-size: 38.4px;
   font-size: 2.4rem;
-  font-family: Lora, Georgia, serif;
   font-style: italic; }
 
 h2 {
-  font-size: 33.6px;
-  font-size: 2.1rem; }
+  font-size: 25.6px;
+  font-size: 1.6rem; }
 
 h3, blockquote cite, .savemethewaltz-template-testimonials .savemethewaltz-testimonials article .entry-content cite, .site-branding .site-title, .widget-title {
-  font-family: Karla, Arial, sans-serif;
+  font-family: futura-pt, Karla, Arial, sans-serif;
   font-weight: 700;
   font-size: 1.2em;
   letter-spacing: 1px;
@@ -458,7 +457,7 @@ form {
 /* Labels */
 label {
   color: #353a78;
-  font-family: Karla, Arial, sans-serif;
+  font-family: futura-pt, Karla, Arial, sans-serif;
   font-size: 0.8em;
   font-weight: 500;
   letter-spacing: 1px;
@@ -519,7 +518,7 @@ input[type="submit"] {
   display: inline-block;
   font-size: 15.2px;
   font-size: 0.95rem;
-  font-family: Karla, Arial, sans-serif;
+  font-family: futura-pt, Karla, Arial, sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
   line-height: 1;
@@ -732,7 +731,7 @@ a {
   border-top: 1px solid #1f245b;
   clear: both;
   display: block;
-  font-family: Karla, Arial, sans-serif;
+  font-family: futura-pt, Karla, Arial, sans-serif;
   width: 100%;
   z-index: 10000;
   /* Current page highlight */
@@ -957,7 +956,7 @@ a {
     .post-navigation .nav-next a span {
       color: #927e35;
       display: block;
-      font-family: Karla, Arial, sans-serif;
+      font-family: futura-pt, Karla, Arial, sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 12px;
@@ -1387,11 +1386,11 @@ a {
 .widget {
   margin: 0 0 1.5em;
   border-top: 2px solid #a58e3c;
-  font-family: Karla, Arial, sans-serif;
+  font-family: futura-pt, Karla, Arial, sans-serif;
   /* Make sure select elements fit in nicely with their friends. */
   /* Consistency across header elements within widgets */ }
   .widget select {
-    font-family: Karla, Arial, sans-serif;
+    font-family: futura-pt, Karla, Arial, sans-serif;
     font-size: 15.2px;
     font-size: 0.95rem;
     max-width: 100%; }
@@ -1405,7 +1404,6 @@ a {
   .widget .site-title:not(.widget-title),
   .widget .widget-title:not(.widget-title),
   .widget h4:not(.widget-title) {
-    font-family: Lora, Georgia, serif;
     font-size: 28.8px;
     font-size: 1.8rem;
     font-style: italic;
@@ -1479,7 +1477,6 @@ a {
 /* Comment widget */
 .widget_recent_comments li {
   border-top: 1px solid rgba(16, 21, 44, 0.5);
-  font-family: Lora, Georgia, serif;
   font-style: italic;
   padding: 7px 0;
   /*.comment-author-link::after,
@@ -1490,7 +1487,6 @@ a {
   .widget_recent_comments li a {
     border: 0;
     display: inline-block;
-    font-family: Karla, Arial, sans-serif;
     font-style: normal; }
 
 /* RSS widget */
@@ -1498,7 +1494,6 @@ a {
   margin-bottom: -7px; }
 
 .widget_rss .rssSummary {
-  font-family: Lora, Georgia, serif;
   font-style: italic; }
 
 .widget_rss cite {
@@ -1509,13 +1504,11 @@ a {
 
 /* Text widget */
 .textwidget {
-  font-family: Lora, Georgia, serif;
   font-style: italic;
   font-size: 1.2em; }
 
 /* Tag cloud widget */
 .widget_tag_cloud .tagcloud {
-  font-family: Lora, Georgia, serif;
   font-style: italic; }
 
 /* Calendar widget */
@@ -1526,7 +1519,6 @@ a {
     margin-right: auto;
     max-width: 500px; }
   .widget_calendar caption {
-    font-family: Lora, Georgia, serif;
     font-style: italic;
     margin-bottom: 5px; }
   .widget_calendar thead {
@@ -1793,8 +1785,6 @@ a {
 .savemethewaltz-panel:nth-of-type(odd) {
   background: #121535 url(assets/svg/starburst.svg) center/cover no-repeat;
   color: #FCFBF9; }
-  .savemethewaltz-panel:nth-of-type(odd) h2 {
-    background: #121535; }
   .savemethewaltz-panel:nth-of-type(odd)::before {
     border-color: #FCFBF9; }
   .savemethewaltz-panel:nth-of-type(odd) .edit-link {
@@ -1831,7 +1821,7 @@ a {
   left: 10px;
   z-index: 1; }
   .savemethewaltz-panel .edit-link a {
-    font-family: Karla, Arial, sans-serif;
+    font-family: futura-pt, Karla, Arial, sans-serif;
     font-size: 0.8rem;
     opacity: 0.4;
     letter-spacing: 1px;
@@ -1852,14 +1842,19 @@ a {
     .savemethewaltz-panel-content {
       padding: 80px; } }
   .savemethewaltz-panel-content h2 {
-    color: #a58e3c;
+    background: #a58e3c;
+    border: 1px solid #121535;
+    color: #121535;
+    display: inline-block;
     margin: 0 auto;
     max-width: 100%;
-    padding: 0.75rem 0 0.85rem;
+    min-width: 160px;
+    padding: 0.75rem 1rem 0.85rem;
     position: relative;
-    text-align: center; }
+    text-align: center;
+    text-transform: uppercase; }
     .savemethewaltz-panel-content h2 a {
-      color: #a58e3c; }
+      color: #121535; }
   .savemethewaltz-panel-content .entry-content {
     margin: 1em auto;
     max-width: 700px;
@@ -2130,7 +2125,7 @@ a {
   display: inline;
   font-size: 12.8px;
   font-size: 0.8rem;
-  font-family: Karla, Arial, sans-serif;
+  font-family: futura-pt, Karla, Arial, sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -2157,7 +2152,7 @@ a {
 .overlay {
   background: #121535;
   border-top: 4px solid #a58e3c;
-  font-family: Karla, Arial, sans-serif;
+  font-family: futura-pt, Karla, Arial, sans-serif;
   font-size: 0.8em;
   max-width: 700px;
   padding: 0 20px;
@@ -2194,7 +2189,7 @@ a {
     bottom: 20px; }
   .savemethewaltz-customizer.savemethewaltz-frontpage .savemethewaltz-panel:not(#savemethewaltz-hero) .savemethewaltz-panel-title {
     color: #FCFBF9;
-    font-family: Karla, Arial, sans-serif;
+    font-family: futura-pt, Karla, Arial, sans-serif;
     font-size: 12.8px;
     font-size: 0.8rem;
     letter-spacing: 1px;
@@ -2593,7 +2588,7 @@ a {
 /* Entry meta */
 .entry-meta, .widget_rss .rss-date, .widget_rss cite {
   color: #a2a7d7;
-  font-family: Karla, Arial, sans-serif;
+  font-family: futura-pt, Karla, Arial, sans-serif;
   font-weight: bold;
   font-size: 13.6px;
   font-size: 0.85rem;
@@ -2630,7 +2625,7 @@ time + .updated {
 
 .page-links {
   clear: both;
-  font-family: Karla, Arial, sans-serif;
+  font-family: futura-pt, Karla, Arial, sans-serif;
   font-size: 14.4px;
   font-size: 0.9rem;
   letter-spacing: 1px;
@@ -2642,7 +2637,6 @@ time + .updated {
 .tags-links {
   color: #7f85c7;
   display: block;
-  font-family: Lora, Georgia, serif;
   font-size: 14.4px;
   font-size: 0.9rem;
   font-style: italic;
@@ -2767,7 +2761,7 @@ div.sharedaddy .sd-title.widget-title {
 /* Comment content */
 .comment-metadata {
   color: #a2a7d7;
-  font-family: Karla, Arial, sans-serif;
+  font-family: futura-pt, Karla, Arial, sans-serif;
   font-weight: bold;
   font-size: 13.6px;
   font-size: 0.85rem;
@@ -2786,7 +2780,7 @@ div.sharedaddy .sd-title.widget-title {
   .reply a {
     border: 1px solid;
     display: inline-block;
-    font-family: Karla, Arial, sans-serif;
+    font-family: futura-pt, Karla, Arial, sans-serif;
     font-weight: bold;
     font-size: 13.6px;
     font-size: 0.85rem;
@@ -2829,7 +2823,7 @@ div.sharedaddy .sd-title.widget-title {
   display: block; }
 
 #infinite-footer {
-  font-family: Karla, Arial, sans-serif;
+  font-family: futura-pt, Karla, Arial, sans-serif;
   width: 100%;
   z-index: 1000000; }
   #infinite-footer .container {

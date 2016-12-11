@@ -84,10 +84,6 @@
 	background: $color__navy url(assets/svg/starburst.svg) center / cover no-repeat;
 	color: $color__white;
 
-	h2 {
-		background: $color__navy;
-	}
-
 	&::before {
 		border-color: $color__white;
 	}
@@ -168,15 +164,20 @@
 	}
 
 	h2 {
-		color: $color__gold;
+		background: $color__gold;
+		border: 1px solid $color__navy;
+		color: $color__navy;
+		display: inline-block;
 		margin: 0 auto;
 		max-width: 100%;
-		padding: 0.75rem 0 0.85rem;
+		min-width: 160px;
+		padding: 0.75rem 1rem 0.85rem;
 		position: relative;
 		text-align: center;
+		text-transform: uppercase;
 
 		a {
-			color: $color__gold;
+			color: $color__navy;
 		} // a
 	} // h2
 

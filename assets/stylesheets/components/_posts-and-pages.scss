@@ -121,7 +121,6 @@ time + .updated {
 .tags-links {
 	color: desaturate(lighten($color__text-screen, 50%), 10%);
 	display: block;
-	font-family: $font__serif;
 	@include font-size(0.9);
 	font-style: italic;
 	margin-top: 0.25rem;

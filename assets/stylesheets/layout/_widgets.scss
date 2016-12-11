@@ -14,7 +14,6 @@
 	h2:not(.widget-title),
 	h3:not(.widget-title),
 	h4:not(.widget-title) {
-		font-family: $font__serif;
 		@include font-size(1.8);
 		font-style: italic;
 		font-weight: normal;
@@ -100,14 +99,12 @@
 .widget_recent_comments {
 	li {
 		border-top: 1px solid transparentize($color__tertiary, 0.5);
-		font-family: $font__serif;
 		font-style: italic;
 		padding: 7px 0;
 
 		a {
 			border: 0;
 			display: inline-block;
-			font-family: $font__sans;
 			font-style: normal;
 		}
 
@@ -131,7 +128,6 @@
 	}
 
 	.rssSummary {
-		font-family: $font__serif;
 		font-style: italic;
 	}
 
@@ -146,14 +142,12 @@
 
 /* Text widget */
 .textwidget {
-	font-family: $font__serif;
 	font-style: italic;
 	font-size: 1.2em;
 }
 
 /* Tag cloud widget */
 .widget_tag_cloud .tagcloud {
-	font-family: $font__serif;
 	font-style: italic;
 }
 
@@ -168,7 +162,6 @@
 	}
 
 	caption {
-		font-family: $font__serif;
 		font-style: italic;
 		margin-bottom: 5px;
 	}
