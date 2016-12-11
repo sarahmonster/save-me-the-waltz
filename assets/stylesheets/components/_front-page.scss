@@ -130,20 +130,14 @@
 
 	h2 {
 		color: $color__gold;
+		margin: 0 auto;
 		max-width: 100%;
 		padding: 0.75rem 0 0.85rem;
 		position: relative;
 		text-align: center;
-		text-transform: uppercase;
-		word-wrap: break-word;
-		word-break: break-word;
 
 		a {
 			color: $color__gold;
-
-			&:hover {
-				border: none;
-			}
 		} // a
 	} // h2
 

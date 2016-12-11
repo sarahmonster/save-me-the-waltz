@@ -182,7 +182,7 @@ function savemethewaltz_fonts_url() {
 		$font_families = array();
 
 		if ( 'off' !== $lora ) {
-			$font_families[] = 'Lora:400,700,400italic,700italic';
+			$font_families[] = 'Poiret One:400';
 		}
 
 		if ( 'off' !== $karla ) {
