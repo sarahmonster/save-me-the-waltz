@@ -229,8 +229,6 @@ function savemethewaltz_scripts() {
 	endif;
 
 	// Font icons, because we're retro like that
-	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/fonts/font-awesome.min.css', array(), null );
-
 	if ( wp_style_is( 'genericons', 'registered' ) ) {
 		wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons.css', array(), null );
 	} else {
@@ -309,8 +307,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-
-// updater for WordPress.com themes
-if ( is_admin() )
-	include dirname( __FILE__ ) . '/inc/updater.php';

@@ -23,9 +23,7 @@
 
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'save-me-the-waltz' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'save-me-the-waltz' ), 'WordPress' ); ?></a>
-			<span class="sep"> &middot; </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'save-me-the-waltz' ), 'save-me-the-waltz', '<a href="http://wordpress.com/themes" rel="designer">WordPress.com</a>' ); ?>
-    </div><!-- .site-info -->
+		</div><!-- .site-info -->
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->

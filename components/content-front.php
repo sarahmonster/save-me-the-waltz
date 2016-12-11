@@ -7,10 +7,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'savemethewaltz-panel savemethewaltz-panel'. esc_attr( $savemethewaltz_panel ) ); ?> data-panel-title="Panel <?php echo esc_attr( $savemethewaltz_panel ); ?>" >
-	<?php if ( has_post_thumbnail() ) :
-		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'savemethewaltz-hero' ); ?>
-		<div class="savemethewaltz-panel-background" style="background-image:url(<?php echo esc_url( $thumbnail[0] ); ?>)"></div>
-	<?php endif; ?>
 	<div class="savemethewaltz-panel-content">
 		<header class="entry-header">
 			<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
@@ -80,12 +76,12 @@
 				<?php if ( ! empty( $testimonials ) ) : ?>
 					<div class="savemethewaltz-testimonials savemethewaltz-grid-two">
 						<?php
-						foreach ( $testimonials as $testimonial ) : 
+						foreach ( $testimonials as $testimonial ) :
 
 							setup_postdata( $GLOBALS['post'] =& $testimonial );
 
 							get_template_part( 'components/content', 'testimonial' );
-							
+
 						endforeach;
 						wp_reset_postdata();
 						?>
