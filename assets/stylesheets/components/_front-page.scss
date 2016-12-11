@@ -68,16 +68,6 @@
 	position: relative;
 	width: 100%;
 
-	&:nth-of-type(odd) {
-		background-color: $color__navy;
-		color: $color__white;
-	}
-
-	&:nth-of-type(even) {
-		background-color: $color__white;
-		color: $color__navy;
-	}
-
 	.entry-meta {
 		display: none; /* Hide for most post formats */
 	}
@@ -89,6 +79,60 @@
 	}
 } // .savemethewaltz-panel
 
+/* Alternate colours between panels. */
+.savemethewaltz-panel:nth-of-type(odd) {
+	background: $color__navy url(assets/svg/starburst.svg) center / cover no-repeat;
+	color: $color__white;
+
+	h2 {
+		background: $color__navy;
+	}
+
+	&::before {
+		border-color: $color__white;
+	}
+
+	.edit-link {
+		color: $color__white;
+	}
+}
+
+.savemethewaltz-panel:nth-of-type(even) {
+	background-color: $color__white;
+	background:
+		url(assets/svg/frame-top-left.svg) top 4px left 4px / 60px 60px no-repeat,
+		url(assets/svg/frame-top-right.svg) top 4px right 4px / 60px 60px no-repeat,
+		url(assets/svg/frame-bottom-left.svg) bottom 4px left 4px / 60px 60px no-repeat,
+		url(assets/svg/frame-bottom-right.svg) bottom 4px right 4px / 60px 60px no-repeat;
+	color: $color__navy;
+
+	&::before {
+		display: block;
+		border: 1.5px solid $color__gold;
+		position: absolute;
+		top: 22.5px;
+		right: 22.5px;
+		left: 22.5px;
+		bottom: 22.5px;
+		content: '';
+	}
+
+	@include tablet {
+		background-position: top 24px left 24px, top 24px right 24px, bottom 24px left 24px, bottom 24px right 24px;
+
+		&::before {
+			top: 43px;
+			left: 43px;
+			right: 43px;
+			bottom: 43px;
+		}
+	}
+
+	.edit-link {
+		color: $color__white;
+	}
+}
+
 /* Edit panel content links */
 .savemethewaltz-panel .edit-link {
 	position: absolute;
@@ -96,12 +140,7 @@
 		left: 10px;
 	z-index: 1;
 
-	&::before {
-		display: none;
-	}
-
 	a {
-		color: $color__white;
 		font-family: $font__sans;
 		font-size: 0.8rem;
 		opacity: 0.4;
@@ -121,11 +160,11 @@
 .savemethewaltz-panel-content {
 	margin: 0 auto;
 	max-width: $size__site-width;
-	padding: $size__site-gutter / 2;
+	padding: $size__site-gutter;
 	text-align: center;
 
 	@include tablet {
-		padding: $size__site-gutter;
+		padding: $size__site-gutter*2;
 	}
 
 	h2 {
