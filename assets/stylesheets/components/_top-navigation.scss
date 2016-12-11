@@ -1,6 +1,6 @@
 #masthead {
 	background-color: $color__navy;
-	height: 240px;
+	height: 300px;
 	position: relative;
 	text-align: center;
 	z-index: 10;
@@ -31,7 +31,7 @@
 			height: 75px;
 
 			@include tablet {
-				height: 100px;
+				height: 300px;
 			}
 		}
 

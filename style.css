@@ -664,7 +664,7 @@ a {
 --------------------------------------------------------------*/
 #masthead {
   background-color: #121535;
-  height: 240px;
+  height: 300px;
   position: relative;
   text-align: center;
   z-index: 10; }
@@ -691,7 +691,7 @@ a {
       height: 75px; }
       @media (min-width: 768px) {
         .site-branding .site-logo-link img {
-          height: 100px; } }
+          height: 300px; } }
     .site-branding .site-logo-link:hover {
       -ms-transform: scale(5%);
       transform: scale(5%); }
