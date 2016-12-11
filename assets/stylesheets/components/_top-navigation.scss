@@ -1,0 +1,338 @@
+#masthead {
+	background-color: $color__primary;
+	height: 240px;
+	position: relative;
+	text-align: center;
+	z-index: 10;
+
+	.savemethewaltz-header {
+		overflow: hidden;
+		position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		z-index: -1;
+	}
+} // #masthead
+
+.site-branding {
+		position: absolute;
+			top: 40%;
+			left: 50%;
+		transform: translate(-50%, -50%);
+
+	.site-logo-link {
+		display: inline-block;
+		margin: 1rem auto 0;
+
+		img {
+			width: auto;
+			height: 75px;
+
+			@include tablet {
+				height: 100px;
+			}
+		}
+
+		&:hover {
+			transform: scale(5%);
+		}
+	} // .site-logo-link
+
+	.site-title {
+		@extend h3;
+		font-style: normal;
+		margin: $size__site-gutter 0 0;
+		padding: 0;
+		text-align: center;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+
+		a {
+			color: $color__white;
+		}
+	} // .site-title
+
+	.site-logo-link + .site-title {
+		margin-top: $size__site-gutter/2;
+	}
+
+	.site-description {
+		color: $color__white;
+		font-style: italic;
+		margin: 0;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+	}
+} // .site-branding
+
+@include mobile {
+	#masthead {
+		height: 160px;
+	}
+
+	.site-logo-link + .site-title,
+	.site-description {
+		display: none;
+	}
+
+	.site-branding {
+		top: 30%;
+	}
+}
+
+/* Navigation menu */
+#site-navigation-wrapper {
+	position: absolute;
+		bottom: 0;
+	width: 100%;
+}
+
+.main-navigation {
+	background: $color__primary;
+	border-bottom: 1px solid lighten($color__primary, 10%);
+	border-top: 1px solid lighten($color__primary, 10%);
+	clear: both;
+	display: block;
+	font-family: $font__sans;
+	width: 100%;
+	z-index: 10000;
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		color: $color__white;
+		display: inline-block;
+		@include font-size(0.8);
+		letter-spacing: 1px;
+		padding: 12px 15px;
+		text-transform: uppercase;
+
+		&:hover {
+			color: lighten($color__secondary, 10%);
+		}
+	}
+
+	/* Current page highlight */
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a {
+		color: $color__tertiary;
+	}
+
+	ul {
+		display: block;
+		list-style: none;
+		margin: 0;
+
+		/* Sub-nav */
+		ul {
+			background: darken($color__primary, 10%);
+			position: absolute;
+				left: -999em;
+			text-align: left;
+			z-index: 99999;
+
+			li {
+				display: block;
+			}
+
+			a {
+				color: $color__tertiary;
+				border-top: 1px solid transparentize($color__tertiary, 0.9);
+				display: block;
+				width: 100%;
+			}
+		} // ul (sub-menu)
+	} // ul (main nav)
+
+	/* Priority+ menu */
+	#more-menu {
+		display: none;
+
+		&.visible {
+			display: inline-block;
+		}
+
+		> a::before {
+			@include genericons;
+			content: '\f476';
+		}
+	} // #more-menu
+} // .main-navigation
+
+/* Mobile menu */
+@include mobile {
+	.main-navigation {
+		a {
+			padding-left: 10px; // Reduce link padding
+		}
+
+		/* Show mobile menus when "focus" class is added via JS */
+		li.focus > ul {
+			left: 0;
+		}
+
+		/* Sub-menus */
+		ul ul {
+			border-bottom: 1px solid lighten($color__primary, 10%);
+			width: 100%;
+		}
+
+		/* Sub-sub-menus */
+		ul ul ul {
+			border-bottom: none;
+			left: 0;
+			padding-left: 25px;
+			position: relative;
+
+			a {
+				padding-left: 0; // No padding here!
+			}
+		}
+	} // .main-navigation
+} // mobile
+
+/* Regular menu */
+@include tablet {
+	.main-navigation {
+		left: 50%;
+		max-width: $size__site-width;
+		position: relative;
+		transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+
+		ul {
+			display: block;
+			list-style: none;
+			margin: 0;
+		}
+
+		li {
+			position: relative;
+		}
+
+		/* Sub-nav */
+		ul ul {
+			position: absolute;
+				top: 37px;
+				left: -999em;
+			min-width: 200px;
+
+			&::before {
+				content: '';
+				display: block;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 7px 7px 7px;
+				border-color: transparent transparent darken($color__primary, 10%) transparent;
+				position: absolute;
+					top: -5px;
+					left: 15px;
+			}
+
+			/* This is just here to make it easier to scroll down to the drop-down */
+			&::after {
+				content: '';
+				display: block;
+				height: 20px;
+				position: absolute;
+					top: -10px;
+					left: 0;
+				width: 100%;
+			}
+
+			li:first-of-type a {
+				border-top: none; /* Remove border for first child element */
+			}
+		} // ul sub-menu
+
+		/* Sub-sub-menu */
+		ul ul ul {
+			left: -999em;
+			top: 0;
+
+			&::before {
+				border-width: 7px 7px 7px 0;
+				border-color: transparent darken($color__primary, 10%) transparent transparent;
+				position: absolute;
+					top: 15px;
+					left: -5px;
+			}
+
+			&::after {
+				height: 100%;
+				left: -15px;
+				top: 0;
+				width: 20px;
+			}
+		} // ul sub-sub-menu
+
+		/* Show sub-menus on hover */
+		li:hover > ul {
+			left: auto;
+		}
+
+		ul ul li:hover > ul {
+			left: 103%;
+			left: calc(100% + 5px);
+		}
+
+		/* Menu items on the right-hand side of the screen should display to the left, so they don't run off the screen */
+		#primary-menu > li:nth-last-child(1):hover > ul,
+		#primary-menu > li:nth-last-child(2):hover > ul {
+		  left: auto;
+		  right: 5%;
+		}
+
+		/* Adjust position of arrow for our last two menu items */
+		#primary-menu > li:nth-last-child(1):hover ul::before,
+		#primary-menu > li:nth-last-child(2):hover ul::before {
+		  left: auto;
+		  right: 15px;
+		}
+
+		/* Adjust position of sub-nav for these final two menu items also */
+		#primary-menu > li:nth-last-child(1) li:hover ul,
+		#primary-menu > li:nth-last-child(2) li:hover ul {
+			left: auto;
+			right: 103%;
+			right: calc(100% + 5px);
+
+		  &::before {
+		    left: auto;
+		    right: -8px;
+		  }
+
+			&::after {
+				left: auto;
+				right: -15px;
+			}
+		}
+
+	} // .main-navigation
+
+	/* Sticky menu */
+	.sticky {
+		position: fixed;
+			top: 0px;
+			bottom: auto;
+	}
+} // tablet
+
+/* Account for the admin bar */
+.admin-bar {
+  .main-navigation.sticky {
+
+    @media screen and (min-width:600px) and (max-width:782px) {
+      top: 46px;
+    }
+
+    @media screen and (min-width:782px) {
+      top: 32px;
+    }
+  }
+}

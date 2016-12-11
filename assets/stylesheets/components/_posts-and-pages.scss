@@ -1,0 +1,178 @@
+.entry-content {
+	margin: 0 0 1.5em;
+
+	a:not(.button):hover {
+		border-bottom: 2px solid;
+	}
+}
+
+.format-image .entry-content a:hover,
+.format-gallery .entry-content a:hover,
+.format-video .entry-content a:hover {
+	border-bottom: none;
+}
+
+/* Sticky posts */
+.entry-title a::before {
+	.sticky & {
+		@include genericons;
+		content: '\f512';
+		display: inline-block;
+		margin-right: 0.5em;
+		text-shadow: none;
+		vertical-align: 0;
+	}
+}
+
+@mixin post-format($format, $icon) {
+	.entry-title a::before {
+		.blog .format-#{$format} &,
+		.archive .format-#{$format} &,
+		.search-results .format-#{$format} & {
+			@include genericons;
+			content: $icon;
+			margin-right: 0.5em;
+			text-shadow: none;
+			vertical-align: 0;
+		}
+	}
+
+	.entry-meta::before {
+		.format-#{$format} & {
+			@include genericons;
+			content: $icon;
+		}
+	}
+}
+
+@include post-format('aside', '\f101');
+@include post-format('audio', '\f109');
+@include post-format('chat', '\f108');
+@include post-format('gallery', '\f103');
+@include post-format('image', '\f102');
+@include post-format('link', '\f107');
+@include post-format('status', '\f105');
+@include post-format('quote', '\f106');
+@include post-format('video', '\f104');
+
+/* Entry meta */
+.entry-meta {
+	color: desaturate(lighten($color__text-screen, 60%), 10%);
+	font-family: $font__sans;
+	font-weight: bold;
+	@include font-size(0.85);
+	letter-spacing: 0.05rem;
+	text-transform: uppercase;
+
+	a {
+		color: desaturate(lighten($color__text-screen, 50%), 10%);
+	}
+
+	+ .entry-title {
+		margin-top: 0.2rem;
+	}
+}
+
+.byline,
+.updated:not(.published){
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+time + .updated {
+  display: none;
+}
+
+.edit-link {
+	&::before {
+		content: ' · ';
+		display: inline;
+	}
+}
+
+.page .edit-link {
+	&::before {
+		display: none;
+	}
+}
+
+/* Content */
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	font-family: $font__sans;
+	@include font-size(0.9);
+	letter-spacing: 1px;
+	margin: 0 0 1.5em;
+	text-transform: uppercase;
+}
+
+/* Categories & tags */
+.cat-links,
+.tags-links {
+	color: desaturate(lighten($color__text-screen, 50%), 10%);
+	display: block;
+	font-family: $font__serif;
+	@include font-size(0.9);
+	font-style: italic;
+	margin-top: 0.25rem;
+
+	a {
+		color: desaturate(lighten($color__text-screen, 40%), 10%);
+	}
+
+	&::before {
+		@include fontawesome;
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+
+.cat-links::before {
+	content: $fa-var-folder-open-o;
+}
+
+.tags-links::before {
+	content: $fa-var-tags;
+}
+
+/* 404 page */
+.error-404 {
+	.page-title {
+		margin-top: 0;
+	}
+
+	.search-form {
+		margin-bottom: $size__site-gutter;
+	}
+}
+
+/* Nothing here yet? */
+.savemethewaltz-get-started {
+	font-size: 1.2em;
+	margin: $size__site-gutter*2 $size__site-gutter;
+	text-align: center;
+}
+
+/* Post footers */
+.entry-footer {
+	padding: $size__site-gutter/2 0;
+}
+
+/* Titles */
+#reply-title,
+div#jp-relatedposts h3.jp-relatedposts-headline,
+div.sharedaddy h3.sd-title {
+	font-family: Karla, Arial, sans-serif;
+	font-size: 0.9rem !important;
+	margin: $size__site-gutter/2 0 0 !important;
+}

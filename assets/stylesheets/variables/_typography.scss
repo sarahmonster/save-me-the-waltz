@@ -1,0 +1,26 @@
+$font__sans: Karla, Arial, sans-serif;
+$font__serif: Lora, Georgia, serif;
+$font__main: $font__serif;
+$font__heading: $font__sans;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+$font__line-height-headings: 1.2;
+
+// Font sizes
+$font__size-h1: 2.1rem;
+$font__size-h2: 2.827em;
+$font__size-h3: 1.2em;
+$font__size-h4: 1.999em;
+$font__size-h5: 1.414em;
+$font__size-h6: 1em;
+$font__size-default: 1em;
+$font__size-content: 1.25em;
+$font__size-small: 0.707em;
+$font__size-smaller: 0.8em;
+$font__size_tiny: 0.7em;
+
+// Weights
+$font__weight-default: 400;
+$font__weight-bold: 700;

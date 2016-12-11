@@ -1,0 +1,254 @@
+.site {
+	background: transparentize($color__white, 0.1);
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
+	max-width: $size__site-width;
+}
+
+.site-content {
+	margin: 0 auto;
+	padding: $size__site-gutter / 2;
+	//max-width: $size__site-width + $size__site-gutter;
+}
+
+.content-area {
+	@include clearfix;
+	overflow-wrap: break-word; /* Prevent stuff from getting spilly on mobile */
+	width: 100%;
+}
+
+/* On smaller devices, give the sidebar a bit of breathing room at the top */
+@include desktop-max {
+	#secondary {
+		margin-top: $size__site-gutter;
+	}
+}
+
+/* On desktop devices, we'll show a sidebar next to our content */
+@include desktop {
+	.site-content {
+		margin-bottom: $size__site-gutter / 2;
+		margin-top: $size__site-gutter;
+
+		.content-area {
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: $size__site-gutter / 2;
+			padding-right: $size__site-gutter / 2;
+			width: 66%;
+		}
+	}
+
+	// If we have a sidebar, float our layout elements
+	.savemethewaltz-sidebar {
+		.content-area {
+			float: right;
+			padding-left: $size__site-gutter;
+			padding-right: 0;
+		}
+
+		.widget-area {
+			display: block;
+			float: right;
+			@include font-size(0.95);
+			padding-right: $size__site-gutter;
+			width: 33%;
+		}
+	}
+
+	// Full width template should expand to use our entire content width
+	.page-template-template-full-width .content-area {
+		float: none;
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+	}
+}
+
+/* Grid structures for tablet devices and larger */
+@include tablet {
+
+	// Two-column grid
+	.savemethewaltz-grid-two article,
+	.error-404 .widget {
+		float: left;
+		font-size: 0.85em;
+		text-align: left;
+		width: 45%;
+		width: calc( (100% - #{$size__site-gutter*2}) / 2);
+
+		&:nth-of-type(odd) {
+		  margin-right: $size__site-gutter;
+		  clear: left;
+		}
+
+		&:nth-of-type(even) {
+		  margin-left: $size__site-gutter;
+		}
+	} // savemethewaltz-grid-two article
+
+	// Three-column grid
+	.savemethewaltz-grid-three article {
+	  float: left;
+	  width: 30%;
+	  width: calc( (100% - #{$size__site-gutter*2}) / 3);
+
+	  &:nth-of-type(1),
+	  &:nth-of-type(3n+1) {
+			clear: left;
+	    margin-right: $size__site-gutter;
+	  }
+
+	  &:nth-of-type(3n) {
+	    margin-left: $size__site-gutter;
+	  }
+	} // .savemethewaltz-grid-three article
+
+} // @include tablet
+
+/* Footer */
+.site-footer {
+	clear: both;
+	color: $color__white;
+	background-attachment: fixed;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+	max-width: $size__site-width;
+	padding: 15px $size__site-gutter / 2 0;
+	position: relative;
+
+	&::before {
+		background: darken(transparentize($color__primary, 0.125), 5%);
+		display: block;
+		position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		z-index: 1;
+	}
+
+	a {
+		color: $color__tertiary;
+	}
+
+	// Site info + links footer
+	.secondary-links,
+	.site-info {
+		@include font-size(0.8);
+		font-style: italic;
+		margin-bottom: 10px;
+		position: relative;
+		text-align: center;
+		z-index: 1;
+
+		a {
+			color: $color__white;
+		}
+
+	} // .secondary-links .site-footer
+
+	@include desktop {
+
+		.secondary-links {
+			float: left;
+			@include font-size(0.9);
+			text-align: left;
+		}
+
+		.site-info {
+			@include font-size(0.9);
+			text-align: center; // Align center if we only have this menu
+			margin-bottom: 15px;
+		}
+
+		.secondary-links + .site-info {
+			float: right;
+			text-align: right;
+
+			&::after {
+				@include clearfix;
+			}
+		}
+	} // tablet
+} // .site-footer
+
+/* Footer sidebar */
+#tertiary {
+	@include clearfix;
+	@include clearfix-after;
+	border-bottom: 1px solid transparentize($color__tertiary, 0.75);
+	margin-bottom: $size__site-gutter / 4;
+	padding: $size__site-gutter / 4 0;
+	position: relative;
+	table-layout: fixed; // Prevents select elements from getting all spilly
+	width: 100%;
+	z-index: 2; // So it's on top of its background
+
+	.widget {
+		border-top: none;
+	}
+
+	.widget:not(.widget_wpcom_social_media_icons_widget) ul {
+		a {
+			color: $color__white;
+
+			&:hover {
+				background-color: transparentize($color__primary, 0.05);
+			}
+		}
+	}
+
+	.widget_archive,
+	.widget_categories {
+
+		ul li::before {
+			border-color: transparentize($color__tertiary, 0.75);
+		}
+	}
+
+	@include tablet {
+		margin-bottom: 15px;
+
+		.widget-area {
+			float: left;
+			@include font-size(0.95);
+			padding: 0 $size__site-gutter / 2;
+
+			&:first-of-type {
+				padding-left: 0;
+			}
+
+			&:last-of-type {
+				padding-right: 0;
+			}
+
+			// One widget area
+			&:nth-child(1):nth-last-child(1) {
+				float: none;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: $size__site-width / 3;
+			}
+
+			// Two widget areas
+			&:nth-child(1):nth-last-child(2),
+			&:nth-child(2):nth-last-child(1) {
+				width: 50%;
+			}
+
+			// Three widget areas
+			&:nth-child(1):nth-last-child(3),
+			&:nth-child(2):nth-last-child(2),
+			&:nth-child(3):nth-last-child(1) {
+				width: 33.3333%;
+			}
+
+			&:nth-child(2):nth-last-child(2) {
+				padding: 0 $size__site-gutter / 4;
+			}
+		}
+	} // @include tablet
+} // #tertiary
