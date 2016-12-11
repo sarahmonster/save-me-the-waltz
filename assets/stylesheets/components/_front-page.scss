@@ -1,46 +1,46 @@
 /* Header rules specific to the front page only */
 .savemethewaltz-frontpage {
-  #masthead {
-          background: none;
-            padding-top: 1em;
-            position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-            width: 100%;
-            z-index: 10000;
+	#masthead {
+		background: none;
+		padding-top: 1em;
+		position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+		width: 100%;
+		z-index: 10000;
 
-    .site-branding {
-      position: relative;
-        top: auto;
-        left: auto;
-      transform: none;
-    }
-  }
+		.site-branding {
+			position: relative;
+				top: auto;
+				left: auto;
+			transform: none;
+		}
+	}
 
-  #site-navigation-wrapper {
-    position: relative;
-  }
+	#site-navigation-wrapper {
+		position: relative;
+	}
 
-  .main-navigation:not(.sticky) {
-    margin-top: 1em;
-    position: relative;
-  }
+	.main-navigation:not(.sticky) {
+		margin-top: 1em;
+		position: relative;
+	}
 
-  // Initial state for our header & nav
-  @include tablet {
-    #site-navigation:not(.sticky) {
-      background: none;
-      border: none;
-    }
-  } // tablet
+	// Initial state for our header & nav
+	@include tablet {
+		#site-navigation:not(.sticky) {
+			background: none;
+			border: none;
+		}
+	} // tablet
 }
 
 /* If we don't have any panels set, set the hero panel to full-height */
 .savemethewaltz-no-panels {
-  #savemethewaltz-hero {
-    min-height: 95vh;
-  }
+	#savemethewaltz-hero {
+		min-height: 95vh;
+	}
 }
 
 /* Re-set some structural elements on these pages. This allows us to have 'panel' style pages. */
@@ -48,164 +48,146 @@
 .archive,
 .blog,
 .search-results {
-  .site-content,
-  .content-area {
-    margin: 0;
-    max-width: none;
-    padding: 0;
-    width: 100%;
-  }
+	.site-content,
+	.content-area {
+		margin: 0;
+		max-width: none;
+		padding: 0;
+		width: 100%;
+	}
 
-  .page-header {
-    text-align: center;
-  }
+	.page-header {
+		text-align: center;
+	}
 }
 
 /* Panels */
 .savemethewaltz-panel {
-  background-color: desaturate(darken($color__secondary, 45%), 20%);
-  min-height: 60vh;
-  margin: 0;
-  position: relative;
-  width: 100%;
+	min-height: 60vh;
+	margin: 0;
+	position: relative;
+	width: 100%;
 
-  &:nth-of-type(even) {
-    background-color: $color__primary;
-  }
+	&:nth-of-type(odd) {
+		background-color: $color__navy;
+		color: $color__white;
+	}
 
-  .entry-meta {
-    display: none; /* Hide for most post formats */
-  }
+	&:nth-of-type(even) {
+		background-color: $color__white;
+		color: $color__navy;
+	}
 
-  .entry-header,
-  .entry-content {
-    position: relative;
-    z-index: 1; /* Make sure these aren't covered by their backgrounds! */
-  }
+	.entry-meta {
+		display: none; /* Hide for most post formats */
+	}
+
+	.entry-header,
+	.entry-content {
+		position: relative;
+		z-index: 1; /* Make sure these aren't covered by their backgrounds! */
+	}
 } // .savemethewaltz-panel
 
 /* Panel background (featured) image */
 .savemethewaltz-panel-background {
-  background-attachment: fixed;
-  background-position: center center;
-  -webkit-filter: brightness(.5);
-        filter: brightness(.5);
-  opacity: 0.5;
-  position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  width: 100%;
-  height: 100%;
+	background-attachment: fixed;
+	background-position: center center;
+	-webkit-filter: brightness(.5);
+				filter: brightness(.5);
+	opacity: 0.5;
+	position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 /* Edit panel content links */
 .savemethewaltz-panel .edit-link {
-  position: absolute;
-    bottom: 15px;
-    left: 10px;
-  z-index: 1;
+	position: absolute;
+		bottom: 15px;
+		left: 10px;
+	z-index: 1;
 
-  &::before {
-    display: none;
-  }
+	&::before {
+		display: none;
+	}
 
-  a {
-    color: $color__white;
-    font-family: $font__sans;
-    font-size: 0.8rem;
-    opacity: 0.4;
-    letter-spacing: 1px;
-    padding: 1rem 1rem;
-    text-transform: uppercase;
-    width: auto;
+	a {
+		color: $color__white;
+		font-family: $font__sans;
+		font-size: 0.8rem;
+		opacity: 0.4;
+		letter-spacing: 1px;
+		padding: 1rem 1rem;
+		text-transform: uppercase;
+		width: auto;
 
-    &:hover {
-      border: none;
-      opacity: 1;
-    }
-  }
+		&:hover {
+			border: none;
+			opacity: 1;
+		}
+	}
 }
 
 /* Panel content */
 .savemethewaltz-panel-content {
-  color: $color__white;
-  margin: 0 auto;
-  max-width: $size__site-width;
-  padding: $size__site-gutter / 2;
-  text-align: center;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+	margin: 0 auto;
+	max-width: $size__site-width;
+	padding: $size__site-gutter / 2;
+	text-align: center;
 
-  @include tablet {
-    padding: $size__site-gutter;
-  }
+	@include tablet {
+		padding: $size__site-gutter;
+	}
 
-  h2 {
-    color: $color__white;
-    border: 2px solid $color__white;
-		border-bottom: 0;
-    display: inline-block;
-    max-width: 100%;
-    padding: 0.75rem 1.5rem 0.85rem;
+	h2 {
+		color: $color__gold;
+		max-width: 100%;
+		padding: 0.75rem 0 0.85rem;
 		position: relative;
-    text-transform: uppercase;
+		text-align: center;
+		text-transform: uppercase;
 		word-wrap: break-word;
 		word-break: break-word;
 
-		&::before,
-		&::after {
-      border-bottom: 2px solid #FCFBF9;
-      content: '';
-      display: block;
-      height: 0;
-      position: absolute;
-      	bottom: 0;
-      width: 50px;
+		a {
+			color: $color__gold;
+
+			&:hover {
+				border: none;
+			}
+		} // a
+	} // h2
+
+	.entry-content {
+		margin: 1em auto;
+		max-width: $size__site-width / 2;
+		text-align: left;
+	} // .entry-content
+
+	// Forms
+	form {
+		background: $color__white;
+		border-top: 4px solid $color__secondary;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: $size__site-width / 2;
+		padding: $size__site-gutter / 2;
+		text-shadow: none;
+	}
+
+	// Blockquotes
+	blockquote {
+		color: $color__white;
+
+		@include tablet {
+			font-size: 1.5em;
 		}
-
-		&::before {
-      left: 0;
-		}
-
-		&::after {
-      right: 0;
-		}
-
-    a {
-      color: $color__white;
-
-      &:hover {
-        border: none;
-      }
-    } // a
-  } // h2
-
-  .entry-content {
-    margin: 1em auto;
-    max-width: $size__site-width / 2;
-    text-align: left;
-  } // .entry-content
-
-  // Forms
-  form {
-    background: $color__white;
-    border-top: 4px solid $color__secondary;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $size__site-width / 2;
-    padding: $size__site-gutter / 2;
-    text-shadow: none;
-  }
-
-  // Blockquotes
-  blockquote {
-    color: $color__white;
-
-    @include tablet {
-      font-size: 1.5em;
-    }
-  } // blockquote
+	} // blockquote
 
 } //.savemethewaltz-panel-content
 
@@ -218,10 +200,10 @@
 // Post formats
 .format-aside,
 .format-status {
-  .savemethewaltz-panel-content .entry-content {
-    font-size: 1.2em;
-    font-style: italic;
-  }
+	.savemethewaltz-panel-content .entry-content {
+		font-size: 1.2em;
+		font-style: italic;
+	}
 }
 
 .format-quote,
@@ -229,103 +211,103 @@
 .format-status,
 .format-link,
 .format-audio {
-  .read-more {
-    display: none;
-  }
+	.read-more {
+		display: none;
+	}
 
-  .entry-meta {
-    display: block;
-    font-style: normal;
-    text-align: left;
+	.entry-meta {
+		display: block;
+		font-style: normal;
+		text-align: left;
 
-    .edit-link {
-      display: none;
-    }
-  }
+		.edit-link {
+			display: none;
+		}
+	}
 }
 
 .format-quote,
 .format-aside,
 .format-status,
 .format-link {
-  .entry-title {
-    display: none;
-  }
-  .entry-content {
-    margin-top: $size__site-gutter;
-  }
+	.entry-title {
+		display: none;
+	}
+	.entry-content {
+		margin-top: $size__site-gutter;
+	}
 }
 
 .format-image,
 .format-video,
 .format-gallery {
-  .savemethewaltz-panel-content .entry-content {
-    text-align: center;
-  }
+	.savemethewaltz-panel-content .entry-content {
+		text-align: center;
+	}
 }
 
 /* Read more links on archive pages */
 .archive,
 .blog,
 .search-results {
-  .read-more {
-    display: block;
-    margin: 2em auto 1em;
-    text-align: center;
+	.read-more {
+		display: block;
+		margin: 2em auto 1em;
+		text-align: center;
 
-    @include tablet {
-      margin-top: 4em;
-    }
+		@include tablet {
+			margin-top: 4em;
+		}
 
-    a {
-      @extend button;
-      text-shadow: none;
+		a {
+			@extend button;
+			text-shadow: none;
 
-      &::after {
-        @include fontawesome;
-        content: $fa-var-arrow-right;
-        display: inline-block;
-      }
+			&::after {
+				@include fontawesome;
+				content: $fa-var-arrow-right;
+				display: inline-block;
+			}
 
-      &:hover {
-        padding-right: calc(3em - 20px);
-        &::after {
-          margin-left: 20px;
-        }
-      }
-    } // a
-  } // .read-more
+			&:hover {
+				padding-right: calc(3em - 20px);
+				&::after {
+					margin-left: 20px;
+				}
+			}
+		} // a
+	} // .read-more
 }
 
 
 /* Hero area (the "home" page, as it were) */
 #savemethewaltz-hero {
 
-  .savemethewaltz-panel-content {
-    padding-top: 8em;
+	.savemethewaltz-panel-content {
+		padding-top: 8em;
 
-    .entry-content {
-      text-align: center;
+		.entry-content {
+			text-align: center;
 
-      p {
-        text-align: left;
+			p {
+				text-align: left;
 
-        &:first-of-type {
-          font-size: 2em;
-          font-style: italic;
-          text-align: center;
-        }
-      }
+				&:first-of-type {
+					font-size: 2em;
+					font-style: italic;
+					text-align: center;
+				}
+			}
 
-      em {
-        color: $color__secondary;
-      }
+			em {
+				color: $color__secondary;
+			}
 
-      @include tablet {
-        padding-top: 2em;
-      }
-    }
-  }
+			@include tablet {
+				padding-top: 2em;
+			}
+		}
+	}
 }
 
 /* Content-heavy pages */
@@ -333,161 +315,161 @@
 .savemethewaltz-template-testimonials,
 .savemethewaltz-template-recent-posts {
 
-  .savemethewaltz-panel-content {
+	.savemethewaltz-panel-content {
 
-    .entry-content {
-      max-width: none;
-    }
+		.entry-content {
+			max-width: none;
+		}
 
-    > .entry-content > p {
-      font-size: 1.2em;
-      font-style: italic;
-      margin: 0 auto 1em;
-      max-width: $size__site-width / 2;
-      text-align: center;
-    }
+		> .entry-content > p {
+			font-size: 1.2em;
+			font-style: italic;
+			margin: 0 auto 1em;
+			max-width: $size__site-width / 2;
+			text-align: center;
+		}
 
-    h3,
-    h3 a {
-      color: $color__text-headings;
-    }
-  } // .savemethewaltz-panel-content
+		h3,
+		h3 a {
+			color: $color__text-headings;
+		}
+	} // .savemethewaltz-panel-content
 } // .savemethewaltz-template-grid, .savemethewaltz-template-testimonials, .savemethewaltz-template-recent-posts
 
 /* Grid template panel */
 .savemethewaltz-grid-three {
 
-  article {
-    font-size: 0.9em;
-    text-align: center;
-  }
+	article {
+		font-size: 0.9em;
+		text-align: center;
+	}
 
-  img.size-savemethewaltz-square {
-    border-radius: 50%;
-    margin: 0 auto;
-    max-width: 60%;
-  }
+	img.size-savemethewaltz-square {
+		border-radius: 50%;
+		margin: 0 auto;
+		max-width: 60%;
+	}
 
-  p {
-    text-align: left;
-  }
+	p {
+		text-align: left;
+	}
 } // .savemethewaltz-grid-three
 
 /* Testimonial panel */
 .savemethewaltz-template-testimonials {
 
-  .savemethewaltz-testimonials {
-    article {
-      font-size: 0.85em;
-      text-align: left;
+	.savemethewaltz-testimonials {
+		article {
+			font-size: 0.85em;
+			text-align: left;
 
-      .entry-content {
-        @extend blockquote;
-        color: $color__white;
-        margin-bottom: 0;
-      } // .entry-content
-    } // article
+			.entry-content {
+				@extend blockquote;
+				color: $color__white;
+				margin-bottom: 0;
+			} // .entry-content
+		} // article
 
-    .entry-footer {
-      @include clearfix;
-      margin-top: $size__site-gutter/2;
-    }
+		.entry-footer {
+			@include clearfix;
+			margin-top: $size__site-gutter/2;
+		}
 
-    .attachment-savemethewaltz-thumbnail-avatar {
-      border-radius: 50%;
-      float: left;
-      margin: 0 $size__site-gutter/2 0 0;
-      max-width: 50%;
-    }
+		.attachment-savemethewaltz-thumbnail-avatar {
+			border-radius: 50%;
+			float: left;
+			margin: 0 $size__site-gutter/2 0 0;
+			max-width: 50%;
+		}
 
-    h2 {
-      border: none;
-      clear: none;
-      color: $color__tertiary;
-      float: left;
-      @include font-size(1);
-      padding: $size__site-gutter/4  0;
+		h2 {
+			border: none;
+			clear: none;
+			color: $color__tertiary;
+			float: left;
+			@include font-size(1);
+			padding: $size__site-gutter/4	0;
 
-      &::before,
+			&::before,
 			&::after {
-        display: none;
-      }
+				display: none;
+			}
 
-      em {
-        display: block;
+			em {
+				display: block;
 				font-style: normal;
-        font-weight: normal;
-        letter-spacing: 0;
-        text-transform: none;
-      }
-    }
-  }
+				font-weight: normal;
+				letter-spacing: 0;
+				text-transform: none;
+			}
+		}
+	}
 } // .savemethewaltz-template-testimonials
 
 /* Recent blog posts panel */
 .savemethewaltz-template-recent-posts {
-  .entry-title {
-    margin-bottom: 0;
-  }
+	.entry-title {
+		margin-bottom: 0;
+	}
 
-  article .entry-content {
-    margin-top: 0;
-  }
+	article .entry-content {
+		margin-top: 0;
+	}
 
-  .read-more a {
-    display: inline;
-    @include font-size(0.8);
-    font-family: $font__sans;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    white-space: nowrap;
+	.read-more a {
+		display: inline;
+		@include font-size(0.8);
+		font-family: $font__sans;
+		font-weight: bold;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		white-space: nowrap;
 
-    &::after {
-      @include fontawesome;
-      content: $fa-var-arrow-right;
-      display: inline-block;
-    }
-  }
+		&::after {
+			@include fontawesome;
+			content: $fa-var-arrow-right;
+			display: inline-block;
+		}
+	}
 } // .savemethewaltz-template-recent-posts
 
 /* Full-width panel */
 .savemethewaltz-template-full-width {
-  .entry-content {
-    max-width: none;
-  }
+	.entry-content {
+		max-width: none;
+	}
 }
 
 /* Overlay elements (used to show content on top of the background image in cases where you want a fully opaque image) */
 .overlay {
-  background: $color__primary;
-  border-top: 4px solid $color__secondary;
-  font-family: $font__sans;
-  font-size: 0.8em;
-  max-width: $size__site-width / 2;
-  padding: 0 $size__site-gutter / 2;
-  text-align: left;
-  text-shadow: none;
+	background: $color__primary;
+	border-top: 4px solid $color__secondary;
+	font-family: $font__sans;
+	font-size: 0.8em;
+	max-width: $size__site-width / 2;
+	padding: 0 $size__site-gutter / 2;
+	text-align: left;
+	text-shadow: none;
 
-  @include mobile {
-    width: 100%;
-  }
+	@include mobile {
+		width: 100%;
+	}
 
-  @include tablet {
-    width: 60%;
-  }
+	@include tablet {
+		width: 60%;
+	}
 
-  @include desktop {
-    width: 40%;
-  }
+	@include desktop {
+		width: 40%;
+	}
 
-  h3 {
-    margin-bottom: 0;
-  }
+	h3 {
+		margin-bottom: 0;
+	}
 
-  p {
-    margin-top: 0;
-  }
+	p {
+		margin-top: 0;
+	}
 }
 
 /* Some elements shouldn't use a text-shadow, because it looks weird. */
@@ -497,109 +479,109 @@
 
 /* Simplify our styles a smidge so the Customizer doesn't have a panic attack */
 .savemethewaltz-customizer .savemethewaltz-panel-background {
-  background-attachment: inherit !important;
+	background-attachment: inherit !important;
 }
 
 /* Add some user-friendly hints/overlays in the Customizer */
 @mixin colourPanel($color) {
 
-  .savemethewaltz-panel-title {
-    background: $color;
-  }
+	.savemethewaltz-panel-title {
+		background: $color;
+	}
 
-  &::after {
-    border-color: $color;
-    color: $color;
-  }
+	&::after {
+		border-color: $color;
+		color: $color;
+	}
 }
 
 .savemethewaltz-customizer.savemethewaltz-frontpage .edit-link {
-  bottom: 20px;
+	bottom: 20px;
 }
 
 .savemethewaltz-customizer.savemethewaltz-frontpage .savemethewaltz-panel:not(#savemethewaltz-hero) {
-  &::after {
-    border: 2px dashed;
-    content: '';
-    display: block;
-    position: absolute;
-      top: 20px;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-  }
+	&::after {
+		border: 2px dashed;
+		content: '';
+		display: block;
+		position: absolute;
+			top: 20px;
+			left: 20px;
+			right: 20px;
+			bottom: 20px;
+	}
 
-  .savemethewaltz-panel-title {
-    color: $color__white;
-    font-family: $font__sans;
-    @include font-size(0.8);
-    letter-spacing: 1px;
-    padding: 5px 10px;
-    position: absolute;
-      top: 15px;
-      right: 15px;
-    text-transform: uppercase;
-  }
+	.savemethewaltz-panel-title {
+		color: $color__white;
+		font-family: $font__sans;
+		@include font-size(0.8);
+		letter-spacing: 1px;
+		padding: 5px 10px;
+		position: absolute;
+			top: 15px;
+			right: 15px;
+		text-transform: uppercase;
+	}
 
-  /* Colour-code all panels (add 1 to account for #savemethewaltz-hero, so 2 is actually panel 1)*/
-  &:nth-of-type(2) {
-    @include colourPanel(#a64b55);
-  }
+	/* Colour-code all panels (add 1 to account for #savemethewaltz-hero, so 2 is actually panel 1)*/
+	&:nth-of-type(2) {
+		@include colourPanel(#a64b55);
+	}
 
-  &:nth-of-type(3) {
-    @include colourPanel(#b569a2);
-  }
+	&:nth-of-type(3) {
+		@include colourPanel(#b569a2);
+	}
 
-  &:nth-of-type(4) {
-    @include colourPanel(#8f68bd);
-  }
+	&:nth-of-type(4) {
+		@include colourPanel(#8f68bd);
+	}
 
-  &:nth-of-type(5) {
-    @include colourPanel(#575ebd);
-  }
+	&:nth-of-type(5) {
+		@include colourPanel(#575ebd);
+	}
 
-  &:nth-of-type(6) {
-    @include colourPanel(#55a1bd);
-  }
+	&:nth-of-type(6) {
+		@include colourPanel(#55a1bd);
+	}
 
-  &:nth-of-type(7) {
-    @include colourPanel(#7dbd8f);
-  }
+	&:nth-of-type(7) {
+		@include colourPanel(#7dbd8f);
+	}
 
-  &:nth-of-type(8) {
-    @include colourPanel(#c8b247);
-  }
+	&:nth-of-type(8) {
+		@include colourPanel(#c8b247);
+	}
 
-  &:nth-of-type(9) {
-    @include colourPanel(#bd7555);
-  }
+	&:nth-of-type(9) {
+		@include colourPanel(#bd7555);
+	}
 }
 
 /* Add a highlight class to improve Customizer behaviour */
 @keyframes flash {
-    0%, 20%, 40%, 60%, 80%, 100% {
-      opacity: 1;
-    }
+		0%, 20%, 40%, 60%, 80%, 100% {
+			opacity: 1;
+		}
 
-    10%, 30%, 50%, 70%, 90% {
-      opacity: 0;
-    }
+		10%, 30%, 50%, 70%, 90% {
+			opacity: 0;
+		}
 }
 
 .savemethewaltz-highlight::after {
-    animation-name: flash;
-    animation-duration: 2s;
-    animation-fill-mode: both;
-    animation-timing-function: ease-in-out;
+		animation-name: flash;
+		animation-duration: 2s;
+		animation-fill-mode: both;
+		animation-timing-function: ease-in-out;
 }
 
 /* Account for the admin bar */
 .admin-bar.savemethewaltz-frontpage {
-  #masthead {
-    top: 32px;
+	#masthead {
+		top: 32px;
 
-    @media screen and (max-width:782px) {
-      top: 46px;
-    }
-  }
+		@media screen and (max-width:782px) {
+			top: 46px;
+		}
+	}
 }
